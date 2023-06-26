@@ -12,7 +12,7 @@ import Email from '../input/Email.vue'
 
               <h3 class="mb-5">Login</h3>
               
-              <Email />
+              <Email id="email-address" title="EmailAddress" /> <!-- idとtitleをpropsで渡すように変更 -->
 
               <div class="form-outline mb-4">
                 <input type="password" id="password" class="form-control form-control-lg" />
