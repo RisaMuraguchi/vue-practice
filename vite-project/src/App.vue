@@ -6,7 +6,7 @@ import SignUp from './components/pages/SignUp.vue'
 </script>
 
 <template>
-  <SignUp />
+  <router-view />
 </template>
 
 <style>

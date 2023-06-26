@@ -1,5 +1,6 @@
 <script setup>
 import Email from '../input/Email.vue'
+import Password from '../input/Password.vue'
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import Email from '../input/Email.vue'
               <h3 class="mb-5">Login</h3>
               
               <Email id="email-address" title="EmailAddress" /> <!-- idとtitleをpropsで渡すように変更 -->
+              <Password id="password" title="password" />
 
               <div class="form-outline mb-4">
                 <input type="password" id="password" class="form-control form-control-lg" />

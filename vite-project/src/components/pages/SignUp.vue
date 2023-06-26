@@ -1,5 +1,6 @@
 <script setup>
 import Email from '../input/Email.vue'
+import Password from '../input/Password.vue'
 </script>
 
 <template>
@@ -14,15 +15,9 @@ import Email from '../input/Email.vue'
                 <h3 class="mb-5">Sign Up</h3>
 
                 <Email id="email" title="Email" />
+                <Password id="password" title="Password(6文字)" />
+                <Password id="password-reinput" title="Password(再入力)" />
 
-                <div class="form-outline mb-4">
-                  <input type="password" id="password" class="form-control form-control-lg" />
-                  <label class="form-label" for="password">Password(6文字以上)</label>
-                </div>
-                <div class="form-outline mb-4">
-                  <input type="password" id="password-retype" class="form-control form-control-lg" />
-                  <label class="form-label" for="password-retype">Password(再入力)</label>
-                </div>
                 <button class="btn btn-outline-primary btn-lg btn-block" type="submit">SignUp</button>
              </div>
             </div>
