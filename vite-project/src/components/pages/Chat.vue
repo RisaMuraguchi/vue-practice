@@ -1,7 +1,11 @@
 <script>
-import { defineComponent, reactive } from 'vue';
+import { defineComponent, reactive } from 'vue'
+import View from '../chat/View.vue'
 
 export default defineComponent({
+  components: {
+    View
+  },
   setup() {
     const data = reactive({
       user: {},
@@ -18,7 +22,7 @@ export default defineComponent({
 
 <template>
   <div class="container">
-    チャット用ページ
+    <View />
   </div>
 </template>
 
