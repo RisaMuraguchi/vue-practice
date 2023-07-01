@@ -13,7 +13,7 @@ const update = (value) => {
 }
 const doSend = () => {
   if (input.value === '') return;
-  update(input.value);
+  update(input.value);　
   input.value = '';
 }
 </script>
