@@ -1,6 +1,25 @@
 <script setup>
 import Email from '../input/Email.vue'
 import Password from '../input/Password.vue'
+import { reactive } from '@vue/reactivity'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+const data = reactive({
+  email: '',
+  password: '',
+})
+
+const auth = getAuth();
+const login = () => {
+  signInWithEmailAndPassword(auth, data.email, data.password)
+    .then((userCredential) => {
+      alert("ログインに成功しました！")
+    })
+    .catch((err) => {
+      console.log(err)
+      alert("正しいログイン情報を入力してください")
+    });
+}
 </script>
 
 <template>
@@ -13,14 +32,14 @@ import Password from '../input/Password.vue'
 
               <h3 class="mb-5">Login</h3>
               
-              <Email id="email-address" title="EmailAddress" /> <!-- idとtitleをpropsで渡すように変更 -->
-              <Password id="password" title="password" />
+              <Email id="email-address" title="EmailAddress" v-model="data.email" />
+              <Password id="password" title="password" v-model="data.password" />
 
               <div class="form-outline mb-4">
                 <input type="password" id="password" class="form-control form-control-lg" />
                 <label class="form-label" for="password">Password</label>
               </div>
-              <button class="btn btn-outline-primary btn-lg btn-block" type="submit">Login</button>
+              <button class="btn btn-outline-primary btn-lg btn-block" type="submit" @click="login">Login</button>
             </div>
           </div>
         </div>
